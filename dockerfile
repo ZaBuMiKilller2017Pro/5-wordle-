@@ -1,24 +1,17 @@
-# Используем официальный образ Python
+# Dockerfile
 FROM python:3.11-slim
 
-# Устанавливаем зависимости для GUI (tkinter)
+# Установка зависимостей для tkinter (в slim-образе их нет)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        tk \
-        x11-apps \
-    && rm -rf /var/lib/apt/lists/*
+        python3-tk \
+        libx11-6 \
+        && rm -rf /var/lib/apt/lists/*
 
-# Устанавливаем переменную DISPLAY (для X11)
-ENV DISPLAY=:0
-
-# Создаем рабочую директорию
 WORKDIR /app
 
-# Копируем файлы проекта
-COPY слова.txt .
-# Переименуем ваш основной файл для ясности
-COPY main.txt main.py
+# Копируем файлы
+COPY main.py слова.txt ./
 
 # Запуск игры
-CMD ["python", "main.py"]
-
+CMD ["python3", "main.py"]
