@@ -28,7 +28,7 @@
 ```bash
 docker build -t 5bukv .
 
-### 2. Запуск приложения
+## 2. Запуск приложения
  На Windows или macOS:
 ```bash
 docker run --rm -it \
