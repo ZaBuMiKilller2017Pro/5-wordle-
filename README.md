@@ -24,18 +24,20 @@
 ## Cборка и запуск
 
 ### 1. Сборка образа
-
+```bash
 docker build -t 5bukv .
-
+```
 ### 2. Запуск приложения 
  На Windows или macOS:
- 
+ ```bash
 docker run --rm -it \
   --name 5bukv-app \
   -e DISPLAY=host.docker.internal:0 \
   5bukv
+```
  На Linux:
 Разрешите доступ к X11-серверу и запустите контейнер:
+```bash
 xhost +local:root
 
 docker run --rm -it \
@@ -43,9 +45,11 @@ docker run --rm -it \
   -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   5bukv
+```
 # Использование .env (опционально)
 На данный момент переменные окружения не используются, но структура поддерживает их в будущем. Если понадобится:
-
+```bash
 docker run --rm -it --env-file .env 5bukv
+
 
 
