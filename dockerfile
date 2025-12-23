@@ -17,7 +17,8 @@ WORKDIR /app
 # Копируем файлы проекта
 COPY слова.txt .
 # Переименуем ваш основной файл для ясности
-COPY wordle.txt game.py
+COPY main.txt main.py
 
 # Запуск игры
-CMD ["python", "game.py"]
+CMD ["python", "main.py"]
+
