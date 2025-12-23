@@ -38,8 +38,9 @@ docker run --rm -e DISPLAY=host.docker.internal:0.0 5-wordle
 
 Структура проекта
 5-wordle-/
-├── main.py                 # Основной код игры с GUI
-├── слова.txt               # Словарь: список 5-буквенных русских слов
-├── Dockerfile              # Инструкции для сборки Docker-образа
-├── requirements.txt        # Список зависимостей (в данном случае пуст, так как используется только стандартная библиотека)
-└── README.md               # Этот файл
+  main.py                
+  слова.txt              
+  Dockerfile             
+  requirements.txt       
+  README.md              
+
