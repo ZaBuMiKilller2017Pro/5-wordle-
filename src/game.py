@@ -1,14 +1,18 @@
 import tkinter as tk
 from tkinter import messagebox, font
 import random
-
+import os
+import sys
 
 class FwordsGame:
     def __init__(self):
         """Инициализация игры с русскими словами"""
 
         # РУССКИЙ словарь из 5 букв
-        with open("слова.txt", 'r', encoding='utf-8') as f:
+        src_dir = os.path.dirname(__file__)
+        words_path = os.path.join(src_dir, "слова.txt")
+
+        with open(words_path, 'r', encoding='utf-8') as f:
             # Каждая строка = отдельное слово
             self.word_list = [line.strip().upper() for line in f if line.strip()]
             # Фильтруем только 5-буквенные слова
@@ -504,4 +508,5 @@ class FwordsGame:
 
 # Запуск игры
 if __name__ == "__main__":
+
     game = FwordsGame()
