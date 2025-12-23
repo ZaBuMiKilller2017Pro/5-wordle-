@@ -1,0 +1,23 @@
+# Используем официальный образ Python
+FROM python:3.11-slim
+
+# Устанавливаем зависимости для GUI (tkinter)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        tk \
+        x11-apps \
+    && rm -rf /var/lib/apt/lists/*
+
+# Устанавливаем переменную DISPLAY (для X11)
+ENV DISPLAY=:0
+
+# Создаем рабочую директорию
+WORKDIR /app
+
+# Копируем файлы проекта
+COPY слова.txt .
+# Переименуем ваш основной файл для ясности
+COPY wordle.txt game.py
+
+# Запуск игры
+CMD ["python", "game.py"]
