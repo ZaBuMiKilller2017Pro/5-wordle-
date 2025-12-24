@@ -7,8 +7,7 @@ class FwordsGame:
         """Инициализация игры с русскими словами"""
 
         # РУССКИЙ словарь из 5 букв
-        with open(words_path, 'r', encoding='utf-8') as f:
-            # Каждая строка = отдельное слово
+        with open("words.txt", 'r', encoding='utf-8') as f:
             self.word_list = [line.strip().upper() for line in f if line.strip()]
             # Фильтруем только 5-буквенные слова
             self.word_list = [word for word in self.word_list if len(word) == 5]
@@ -47,7 +46,7 @@ class FwordsGame:
         self.button_font = font.Font(family="Helvetica", size=12)
         self.keyboard_font = font.Font(family="Helvetica", size=14, weight="bold")
 
-        # Словарь для отслеживания состояния букв на клавиатуре
+        # рь для отслеживания состояния букв на клавиатуре
         self.keyboard_colors = {}
         for letter in self.russian_letters:
             self.keyboard_colors[letter] = '#818384'  # Серый по умолчанию
@@ -505,4 +504,5 @@ class FwordsGame:
 if __name__ == "__main__":
 
     game = FwordsGame()
+
 
