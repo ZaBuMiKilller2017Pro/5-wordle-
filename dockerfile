@@ -15,8 +15,9 @@ WORKDIR /app
 
 # Копируем исходный код и словарь
 COPY main.py .
-COPY слова.txt .
+COPY words.txt .
 
 # Запуск игры
 CMD ["python3", "main.py"]
+
 
