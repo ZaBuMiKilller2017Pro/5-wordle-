@@ -10,11 +10,11 @@
 project_root/
 
     │
-├── main.py
-└── src/
-    ├── __init__.py         
-    ├── game.py             
-    └── слова.txt 
+    ├── main.py
+    └── src/
+        ├── __init__.py         
+        ├── game.py             
+        └── слова.txt 
 
 ## Требования
 
@@ -52,6 +52,7 @@ docker run --rm -it \
 На данный момент переменные окружения не используются, но структура поддерживает их в будущем. Если понадобится:
 ```bash
 docker run --rm -it --env-file .env 5bukv
+
 
 
 
